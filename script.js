@@ -24,7 +24,7 @@ upgrade.onclick = function() {
         count -= upgradeCost;
         level++;
         clickPower++;
-        upgradeCost = Math.floor(10 * Math.pow(1.2, level));
+        upgradeCost = Math.floor(10 * Math.pow(2.1, level));
         cost.textContent = `Upgrade cost: ${upgradeCost}`;
         number.textContent = count;
         saveGame();
