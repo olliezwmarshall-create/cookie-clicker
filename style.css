@@ -1,3 +1,4 @@
+/*organisations*/
 body {
     background-color: #f0e68c;
     display: flex;
@@ -12,6 +13,55 @@ body {
     height: 22em;
     transition: transform 150ms ease, filter 150ms ease;
     animation: spin 30s linear infinite;
+}
+#cost {
+    font-size: 3em;
+    font-family: Helvetica, sans-serif;
+    margin: 0.5em;
+}
+#Number {
+  font-size: 9em;
+  font-family: Helvetica, sans-serif;
+}
+#title {
+  font-size: 5em;
+  font-family: Helvetica, sans-serif;
+  animation: bounce 5s ease infinite;
+}
+/*colors&decor*/
+#cookie:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    filter: brightness(0.92);
+}
+#cookie:active {
+    transform: scale(0.95);
+    filter: brightness(0.85);
+}
+#upgrade:hover,
+#auto:hover,
+#auto-max:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    filter: brightness(0.92);
+}
+#upgrade:active,
+#auto:active,
+#auto-max:active {
+    transform: scale(0.95);
+    filter: brightness(0.85);
+}
+#upgrade,
+#auto,
+#auto-max {
+    font-size: 2em;
+    font-family: Helvetica, sans-serif;
+    width: 10em;
+    height: 3em;
+    border-radius: 1em;
+    background-color: green;
+    color: white; 
+    transition: transform 150ms ease, filter 150ms ease;
 }
 @keyframes spin {
     from {
@@ -37,51 +87,4 @@ body {
     100% {
         transform: translateY(0) rotate(0deg);
     }
-}
-#upgrade {
-    font-size: 2em;
-    font-family: Helvetica, sans-serif;
-    width: 10em;
-    height: 3em;
-    border-radius: 1em;
-    background-color: green;
-    color: white; 
-    transition: transform 150ms ease, filter 150ms ease;
-}
-#cost {
-    font-size: 3em;
-    font-family: Helvetica, sans-serif;
-    margin: 0.5em;
-}
-body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#Number {
-  font-size: 9em;
-  font-family: Helvetica, sans-serif;
-}
-#title {
-  font-size: 5em;
-  font-family: Helvetica, sans-serif;
-  animation: bounce 5s ease infinite;
-}
-#cookie:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    filter: brightness(0.92);
-}
-#cookie:active {
-    transform: scale(0.95);
-    filter: brightness(0.85);
-}
-#upgrade:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    filter: brightness(0.92);
-}
-#upgrade:active {
-    transform: scale(0.95);
-    filter: brightness(0.85);
 }
