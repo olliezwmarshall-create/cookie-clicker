@@ -2,24 +2,45 @@
 body {
     background-color: #f0e68c;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
+    gap: 35em;
+    -webkit-user-select: none; 
+    -ms-user-select: none;     
+    user-select: none;
+}
+#upgrades{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transform: scale(1.5)
+}
+#game{
+    display: flex;
+    flex-direction: column;
+    transform: scale(1.4)
 }
 #cookie {
     width: 22em;
     height: 22em;
-    transition: transform 150ms ease, filter 150ms ease;
     animation: spin 30s linear infinite;
+    pointer-events: none;
 }
-#cost {
+#cookie-container {
+    display: inline-block;
+    transition: transform 150ms ease, filter 150ms ease;
+    cursor: pointer;
+}
+#cost, #auto_cost, #auto_cps, #click_power {
     font-size: 3em;
     font-family: Helvetica, sans-serif;
     margin: 0.5em;
 }
 #Number {
+  display: block;
   font-size: 9em;
   font-family: Helvetica, sans-serif;
 }
@@ -29,16 +50,8 @@ body {
   animation: bounce 5s ease infinite;
 }
 /*colors&decor*/
-#cookie:hover {
-    cursor: pointer;
-    transform: scale(1.05);
-    filter: brightness(0.92);
-}
-#cookie:active {
-    transform: scale(0.95);
-    filter: brightness(0.85);
-}
 #upgrade:hover,
+#upgrade_max:hover,
 #auto:hover,
 #auto-max:hover {
     cursor: pointer;
@@ -46,12 +59,24 @@ body {
     filter: brightness(0.92);
 }
 #upgrade:active,
+#upgrade_max:active,
 #auto:active,
 #auto-max:active {
     transform: scale(0.95);
     filter: brightness(0.85);
 }
+#cookie-container:hover {
+    cursor: pointer;
+    transform: scale(1.01);
+    filter: brightness(0.92);
+}
+#cookie-container:active {
+    cursor: pointer;
+    transform: scale(0.99);
+    filter: brightness(0.92);
+}
 #upgrade,
+#upgrade_max,
 #auto,
 #auto-max {
     font-size: 2em;
@@ -62,6 +87,7 @@ body {
     background-color: green;
     color: white; 
     transition: transform 150ms ease, filter 150ms ease;
+    margin: 10 px;
 }
 @keyframes spin {
     from {
