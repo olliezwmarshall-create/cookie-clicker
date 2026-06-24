@@ -94,8 +94,8 @@ setInterval(() => {
 }, 1000);
 
 function getAutoPrice() {
-    return Math.floor(100 * Math.pow(1.141234, auto_level));
+    return Math.floor(100 * Math.pow(1.0673421, auto_level));
 }
 function getPrice(){
-    return Math.floor(10 * Math.pow(1.75385, level));
+    return Math.floor(10 * Math.pow(1.5321412, level));
 }
