@@ -8,6 +8,7 @@ const auto_cost_element = document.getElementById('auto_cost');
 const upgrade_max_element = document.getElementById(`upgrade_max`);
 const auto_cps_element = document.getElementById('auto_cps');
 const click_power_element = document.getElementById('click_power');
+const reset = document.getElementById('reset');
 
 let count = Number(localStorage.getItem("count")) || 0;
 let clickPower = Number(localStorage.getItem("clickPower")) || 1;
@@ -33,6 +34,7 @@ number.textContent = count;
 cookie.onclick = function() {
     count += clickPower;
     number.textContent = count;
+    updateTabTitle()
     saveGame();
 }
 
@@ -86,10 +88,29 @@ auto_max.onclick = function(){
     auto_cps_element.textContent = `Auto cps: ${auto_cps}`;
     saveGame(); 
 }
+reset.onclick = function(){
+    if(confirm("Are you sure you want to reset game data? This is irreversable!")){
+        count = 0;
+        clickPower = 1;
+        level = 0;
+        auto_cps = 0;
+        auto_level = 0;
+
+        number.textContent = count;
+        cost.textContent = `Upgrade cost: ${getPrice()}`;
+        auto_cost_element.textContent = `Auto price: ${getAutoPrice()}`;
+        auto_cps_element.textContent = `Auto cps: ${auto_cps}`;
+        click_power_element.textContent = `Click power: ${clickPower}`;
+        updateTabTitle()
+
+        saveGame()
+    }
+}
 
 setInterval(() => {
     count += auto_cps;
     number.textContent = count;
+    updateTabTitle()
     saveGame();
 }, 1000);
 
@@ -98,4 +119,7 @@ function getAutoPrice() {
 }
 function getPrice(){
     return Math.floor(10 * Math.pow(1.5321412, level));
+}
+function updateTabTitle() {
+    document.title = `(${count})-Cookie Clicker`;
 }

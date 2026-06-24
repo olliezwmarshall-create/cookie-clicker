@@ -58,7 +58,8 @@ body {
 #upgrade:hover,
 #upgrade_max:hover,
 #auto:hover,
-#auto-max:hover {
+#auto-max:hover,
+#reset:hover {
     cursor: pointer;
     transform: scale(1.05);
     filter: brightness(0.92);
@@ -66,7 +67,8 @@ body {
 #upgrade:active,
 #upgrade_max:active,
 #auto:active,
-#auto-max:active {
+#auto-max:active,
+#reset:active {
     transform: scale(0.95);
     filter: brightness(0.85);
 }
@@ -90,6 +92,17 @@ body {
     height: 3em;
     border-radius: 1em;
     background-color: green;
+    color: white; 
+    transition: transform 150ms ease, filter 150ms ease;
+    margin: 10 px;
+}
+#reset{
+    font-size: 2em;
+    font-family: Helvetica, sans-serif;
+    width: 10em;
+    height: 3em;
+    border-radius: 1em;
+    background-color: red;
     color: white; 
     transition: transform 150ms ease, filter 150ms ease;
     margin: 10 px;
