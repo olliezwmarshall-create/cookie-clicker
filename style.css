@@ -37,6 +37,7 @@ body {
     height: 22em;
     transition: transform 150ms ease, filter 150ms ease;
     cursor: pointer;
+    corne
 }
 #cost, #auto_cost, #auto_cps, #click_power {
     font-size: 3em;
