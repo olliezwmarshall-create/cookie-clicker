@@ -9,12 +9,14 @@ const upgrade_max_element = document.getElementById(`upgrade_max`);
 const auto_cps_element = document.getElementById('auto_cps');
 const click_power_element = document.getElementById('click_power');
 const reset = document.getElementById('reset');
+const net_cookies_element = document.getElementById('Net_cookies');
 
 let count = Number(localStorage.getItem("count")) || 0;
 let clickPower = Number(localStorage.getItem("clickPower")) || 1;
 let level = Number(localStorage.getItem("level")) || 0;
 let auto_cps = Number(localStorage.getItem("auto_cps")) || 0;
 let auto_level = Number(localStorage.getItem("auto_level")) || 0;
+let net_cookies = Number(localStorage.getItem("net_cookies")) || 0;
 
 function saveGame() {
     localStorage.setItem("count", count);
@@ -22,6 +24,7 @@ function saveGame() {
     localStorage.setItem("level", level);
     localStorage.setItem("auto_cps", auto_cps);
     localStorage.setItem("auto_level", auto_level); 
+    localStorage.setItem("net_cookies", net_cookies);
 }
 
 
@@ -30,10 +33,13 @@ auto_cost_element.textContent = `Auto price: ${getAutoPrice()}`;
 auto_cps_element.textContent = `Auto cps: ${auto_cps}`;
 click_power_element.textContent = `Click power: ${clickPower}`;
 number.textContent = count;
+net_cookies_element.textContent = `Alltime cookies: ${net_cookies}` 
 
 cookie.onclick = function() {
     count += clickPower;
     number.textContent = count;
+    net_cookies += clickPower
+    net_cookies_element.textContent = `Alltime cookies: ${net_cookies}` 
     updateTabTitle()
     saveGame();
 }
@@ -95,6 +101,8 @@ reset.onclick = function(){
         level = 0;
         auto_cps = 0;
         auto_level = 0;
+        net_cookies = 0;
+
 
         number.textContent = count;
         cost.textContent = `Upgrade cost: ${getPrice()}`;
@@ -110,6 +118,8 @@ reset.onclick = function(){
 setInterval(() => {
     count += auto_cps;
     number.textContent = count;
+    net_cookies += auto_cps
+    net_cookies_element.textContent = `Alltime cookies: ${net_cookies}` 
     updateTabTitle()
     saveGame();
 }, 1000);

@@ -21,11 +21,11 @@ body {
 #game{
     display: flex;
     flex-direction: column;
-    transform: scale(1.4)
+    transform: scale(1.25)
 }
 #cookie {
-    width: 22em;
-    height: 22em;
+    width: 21em;
+    height: 21em;
     animation: spin 30s linear infinite;
     pointer-events: none;
 }
@@ -39,7 +39,7 @@ body {
     cursor: pointer;
     border-radius: 50%;
 }
-#cost, #auto_cost, #auto_cps, #click_power {
+#cost, #auto_cost, #auto_cps, #click_power, #Net_cookies {
     font-size: 3em;
     font-family: Helvetica, sans-serif;
     margin: 0.5em;
