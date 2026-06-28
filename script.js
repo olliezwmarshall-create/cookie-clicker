@@ -45,6 +45,7 @@ function saveGame() {
     localStorage.setItem("auto_cps", auto_cps);
     localStorage.setItem("auto_level", auto_level); 
     localStorage.setItem("net_cookies", net_cookies);
+}
 
 cost.textContent = `Upgrade cost: ${formatNumbers(getPrice())}`;
 auto_cost_element.textContent = `Auto price: ${formatNumbers(getAutoPrice())}`;
